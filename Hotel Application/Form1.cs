@@ -37,6 +37,7 @@ namespace Hotel_Application
             {
 
             }
+
             //Создание combobox в data grid Номера в поле Этаж
             int[] list_room = new int[] { 1, 2, 3, 4, 5 };
             var oldcol3 = dataGridView1.Columns[1];
@@ -51,6 +52,8 @@ namespace Hotel_Application
             dataGridView1.Columns.RemoveAt(1);
             dataGridView1.Columns.Insert(1, newcol3);
             //dataGridView2[1, 3].Value
+
+
 
             //Создание combobox в data grid Номера в поле Бронь 
             string[] list_bokinbg = new string[] { "Есть", "Нет" };
@@ -118,6 +121,7 @@ namespace Hotel_Application
             int[] list_people2 = new int[] { 1, 2, 3, 4 };
             var oldcol6 = dataGridView2.Columns[3];
             var newcol6 = new DataGridViewComboBoxColumn();
+            //newcol6.D
             newcol6.FlatStyle = FlatStyle.Popup;
             newcol6.HeaderText = oldcol6.HeaderText;
             newcol6.HeaderCell = oldcol6.HeaderCell;
@@ -127,7 +131,7 @@ namespace Hotel_Application
             dataGridView2.Columns.RemoveAt(3);
             dataGridView2.Columns.Insert(3, newcol6);
         }
-            void Main()
+        void Main()
         {
             dataGridView1.DataError += myDataGridView_DataError;
             void myDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -150,7 +154,6 @@ namespace Hotel_Application
             dataGridView2.EndEdit();
             roomersTableAdapter.Update(data_baseDataSet.Roomers);
             MessageBox.Show("Изменения сохраненнны", "Уведомление");
-
         }
 
         //Кнопка удалить выделенную строчку в таблице Комнаты
@@ -198,6 +201,18 @@ namespace Hotel_Application
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            ComboBox box = e.Control as ComboBox;
+            if (e.Control is DataGridViewComboBoxEditingControl)
+            {
+                box.AutoCompleteSource = AutoCompleteSource.ListItems;
+                box.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+                box.DropDownStyle = ComboBoxStyle.DropDown;
+                box.DataSource = box.Items;
+            }
         }
     }
 }

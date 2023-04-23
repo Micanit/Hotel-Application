@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -40,9 +39,15 @@
             this.удалитьВыделеннуюСтрочкуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.data_baseDataSet = new Hotel_Application.Data_baseDataSet();
+            this.номерКомнатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.этажDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.броньDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.колвоЛюдейDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.классОбслуживанияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.roomsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.roomsTableAdapter = new Hotel_Application.Data_baseDataSetTableAdapters.RoomsTableAdapter();
+            this.data_baseDataSet = new Hotel_Application.Data_baseDataSet();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -50,7 +55,14 @@
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.roomersBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.roomsTableAdapter = new Hotel_Application.Data_baseDataSetTableAdapters.RoomsTableAdapter();
             this.roomersTableAdapter = new Hotel_Application.Data_baseDataSetTableAdapters.RoomersTableAdapter();
             this.roomersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Имя = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,29 +71,17 @@
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.номерКомнатыDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.этажDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ценаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.броньDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.колвоЛюдейDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.классОбслуживанияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data_baseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_baseDataSet)).BeginInit();
+            this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -113,17 +113,6 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Комнаты";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.splitContainer2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(813, 421);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Постояльцы";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer1
             // 
@@ -208,20 +197,79 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(807, 346);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             // 
-            // data_baseDataSet
+            // номерКомнатыDataGridViewTextBoxColumn
             // 
-            this.data_baseDataSet.DataSetName = "Data_baseDataSet";
-            this.data_baseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.номерКомнатыDataGridViewTextBoxColumn.DataPropertyName = "Номер комнаты";
+            this.номерКомнатыDataGridViewTextBoxColumn.HeaderText = "Номер комнаты";
+            this.номерКомнатыDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.номерКомнатыDataGridViewTextBoxColumn.Name = "номерКомнатыDataGridViewTextBoxColumn";
+            this.номерКомнатыDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.номерКомнатыDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // этажDataGridViewTextBoxColumn
+            // 
+            this.этажDataGridViewTextBoxColumn.DataPropertyName = "Этаж";
+            this.этажDataGridViewTextBoxColumn.HeaderText = "Этаж";
+            this.этажDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.этажDataGridViewTextBoxColumn.Name = "этажDataGridViewTextBoxColumn";
+            this.этажDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // ценаDataGridViewTextBoxColumn
+            // 
+            this.ценаDataGridViewTextBoxColumn.DataPropertyName = "Цена";
+            this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
+            this.ценаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
+            this.ценаDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // броньDataGridViewTextBoxColumn
+            // 
+            this.броньDataGridViewTextBoxColumn.DataPropertyName = "Бронь";
+            this.броньDataGridViewTextBoxColumn.HeaderText = "Бронь";
+            this.броньDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.броньDataGridViewTextBoxColumn.Name = "броньDataGridViewTextBoxColumn";
+            this.броньDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // колвоЛюдейDataGridViewTextBoxColumn
+            // 
+            this.колвоЛюдейDataGridViewTextBoxColumn.DataPropertyName = "Кол-во людей";
+            this.колвоЛюдейDataGridViewTextBoxColumn.HeaderText = "Кол-во людей";
+            this.колвоЛюдейDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.колвоЛюдейDataGridViewTextBoxColumn.Name = "колвоЛюдейDataGridViewTextBoxColumn";
+            this.колвоЛюдейDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // классОбслуживанияDataGridViewTextBoxColumn
+            // 
+            this.классОбслуживанияDataGridViewTextBoxColumn.DataPropertyName = "Класс обслуживания";
+            this.классОбслуживанияDataGridViewTextBoxColumn.HeaderText = "Класс обслуживания";
+            this.классОбслуживанияDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.классОбслуживанияDataGridViewTextBoxColumn.Name = "классОбслуживанияDataGridViewTextBoxColumn";
+            this.классОбслуживанияDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.классОбслуживанияDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.классОбслуживанияDataGridViewTextBoxColumn.Width = 125;
             // 
             // roomsBindingSource
             // 
             this.roomsBindingSource.DataMember = "Rooms";
             this.roomsBindingSource.DataSource = this.data_baseDataSet;
             // 
-            // roomsTableAdapter
+            // data_baseDataSet
             // 
-            this.roomsTableAdapter.ClearBeforeFill = true;
+            this.data_baseDataSet.DataSetName = "Data_baseDataSet";
+            this.data_baseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.splitContainer2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(813, 421);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Постояльцы";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // splitContainer2
             // 
@@ -308,10 +356,62 @@
             this.dataGridView2.Size = new System.Drawing.Size(807, 346);
             this.dataGridView2.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Имя";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Имя";
+            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "С какого числа приезжает";
+            this.dataGridViewTextBoxColumn6.HeaderText = "С какого числа приезжает";
+            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "С какого числа уезжает";
+            this.dataGridViewTextBoxColumn8.HeaderText = "С какого числа уезжает";
+            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Кол-во человек";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Кол-во человек";
+            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Класс обслуживания";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Класс обслуживания";
+            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Номер комнаты";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Номер комнаты";
+            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Width = 125;
+            // 
             // roomersBindingSource
             // 
             this.roomersBindingSource.DataMember = "Roomers";
             this.roomersBindingSource.DataSource = this.data_baseDataSet;
+            // 
+            // roomsTableAdapter
+            // 
+            this.roomsTableAdapter.ClearBeforeFill = true;
             // 
             // roomersTableAdapter
             // 
@@ -370,104 +470,6 @@
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.Width = 125;
             // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Имя";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn7.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "С какого числа приезжает";
-            this.dataGridViewTextBoxColumn6.HeaderText = "С какого числа приезжает";
-            this.dataGridViewTextBoxColumn6.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "С какого числа уезжает";
-            this.dataGridViewTextBoxColumn8.HeaderText = "С какого числа уезжает";
-            this.dataGridViewTextBoxColumn8.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Кол-во человек";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Кол-во человек";
-            this.dataGridViewTextBoxColumn9.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Класс обслуживания";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Класс обслуживания";
-            this.dataGridViewTextBoxColumn10.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.Width = 125;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Номер комнаты";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Номер комнаты";
-            this.dataGridViewTextBoxColumn11.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.Width = 125;
-            // 
-            // номерКомнатыDataGridViewTextBoxColumn
-            // 
-            this.номерКомнатыDataGridViewTextBoxColumn.DataPropertyName = "Номер комнаты";
-            this.номерКомнатыDataGridViewTextBoxColumn.HeaderText = "Номер комнаты";
-            this.номерКомнатыDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.номерКомнатыDataGridViewTextBoxColumn.Name = "номерКомнатыDataGridViewTextBoxColumn";
-            this.номерКомнатыDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // этажDataGridViewTextBoxColumn
-            // 
-            this.этажDataGridViewTextBoxColumn.DataPropertyName = "Этаж";
-            this.этажDataGridViewTextBoxColumn.HeaderText = "Этаж";
-            this.этажDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.этажDataGridViewTextBoxColumn.Name = "этажDataGridViewTextBoxColumn";
-            this.этажDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // ценаDataGridViewTextBoxColumn
-            // 
-            this.ценаDataGridViewTextBoxColumn.DataPropertyName = "Цена";
-            this.ценаDataGridViewTextBoxColumn.HeaderText = "Цена";
-            this.ценаDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ценаDataGridViewTextBoxColumn.Name = "ценаDataGridViewTextBoxColumn";
-            this.ценаDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // броньDataGridViewTextBoxColumn
-            // 
-            this.броньDataGridViewTextBoxColumn.DataPropertyName = "Бронь";
-            this.броньDataGridViewTextBoxColumn.HeaderText = "Бронь";
-            this.броньDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.броньDataGridViewTextBoxColumn.Name = "броньDataGridViewTextBoxColumn";
-            this.броньDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // колвоЛюдейDataGridViewTextBoxColumn
-            // 
-            this.колвоЛюдейDataGridViewTextBoxColumn.DataPropertyName = "Кол-во людей";
-            this.колвоЛюдейDataGridViewTextBoxColumn.HeaderText = "Кол-во людей";
-            this.колвоЛюдейDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.колвоЛюдейDataGridViewTextBoxColumn.Name = "колвоЛюдейDataGridViewTextBoxColumn";
-            this.колвоЛюдейDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // классОбслуживанияDataGridViewTextBoxColumn
-            // 
-            this.классОбслуживанияDataGridViewTextBoxColumn.DataPropertyName = "Класс обслуживания";
-            this.классОбслуживанияDataGridViewTextBoxColumn.HeaderText = "Класс обслуживания";
-            this.классОбслуживанияDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.классОбслуживанияDataGridViewTextBoxColumn.Name = "классОбслуживанияDataGridViewTextBoxColumn";
-            this.классОбслуживанияDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.классОбслуживанияDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.классОбслуживанияDataGridViewTextBoxColumn.Width = 125;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -475,11 +477,10 @@
             this.ClientSize = new System.Drawing.Size(821, 450);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Hotel application";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
@@ -488,8 +489,9 @@
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.data_baseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.roomsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.data_baseDataSet)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
